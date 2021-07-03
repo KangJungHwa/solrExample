@@ -1,214 +1,243 @@
 package me.kang.solr;
 
-
-import org.apache.solr.client.solrj.SolrClient;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
-import org.apache.solr.client.solrj.impl.HttpSolrClient.Builder;
-import org.apache.solr.client.solrj.impl.XMLResponseParser;
+import org.apache.solr.client.solrj.request.UpdateRequest;
 import org.apache.solr.client.solrj.response.UpdateResponse;
 import org.apache.solr.common.SolrInputDocument;
-import org.apache.tika.metadata.Metadata;
-import org.apache.tika.parser.AutoDetectParser;
-import org.apache.tika.parser.ParseContext;
-import org.apache.tika.sax.BodyContentHandler;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.stereotype.Component;
-import org.xml.sax.ContentHandler;
 
-import java.io.File;
-import java.io.FileInputStream;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.ApplicationArguments;
+
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Optional;
+import java.util.HashMap;
+import java.util.Map;
 
+@Slf4j
 @Component
-class SolrIndexRunner implements CommandLineRunner {
+public class SolrIndexRunner implements ApplicationRunner {
 
-    private SolrClient client;
     private long start = System.currentTimeMillis();
-    private final String zkEnsemble = "http://localhost:2181";
-    private AutoDetectParser autoParser;
+
+    @Value("${data.solr.host}")
+    String solrUrl;
+
+    @Value("${datasource.url}")
+    String mysqlUrl;
+
+    @Value("${datasource.driver-class-name}")
+    String driverClassName;
+
+    @Value("${datasource.username}")
+    String userName;
+
+    @Value("${datasource.password}")
+    String passWord;
+
+// 주키퍼를 사용할때는 아래에 3대의 주키퍼서버를 콤마 구분자로 정의한다.
+//    private final String zkEnsemble = "http://localhost:2181";
+
     private Collection docList = new ArrayList();
-    private int totalTika = 0;
-    private int totalSql = 0;
-    @Override
-    public void run(String... args) throws Exception {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+    private Connection getConnection(){
+        Connection conn=null;
         try {
-            solrIndexRunner("http://localhost:8983/solr");
-
-            doSqlDocuments();
-
-            endIndexing();
+            Class.forName(driverClassName).newInstance();
+            conn = DriverManager.getConnection(mysqlUrl + "user="+userName+"&password="+passWord);
         } catch (Exception e) {
-            e.printStackTrace();
+
+        }
+        return conn;
+    }
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        System.out.println("======================================================");
+        System.out.println("ApplicationRunner - ApplicationArguments ");
+        System.out.println("NonOption Arguments : " + args.getNonOptionArgs());
+        System.out.println("Option Arguments Names : " + args.getOptionNames());
+        System.out.println("key1의 value : " + args.getOptionValues("action"));
+        System.out.println("key2의 value : " + args.getOptionValues("table_name"));
+        System.out.println("======================================================");
+
+        switch (args.getOptionValues("action").get(0)) {
+            case "insert":
+                insertSeperator(args.getOptionValues("table_name").get(0));
+                break;
+            case "update":
+                updateSeperator(args.getOptionValues("table_name").get(0));
+                break;
+            default:
+                // System.out.println("기타"); break;
+        }
+
+    }
+
+
+
+    public void insertSeperator(String table_name) {
+        log.info("~~~~~~~~~insertSeperator~~~~~~~~~~~~~~~"+table_name);
+        switch (table_name) {
+            case "api_glue_job":
+                insertJob(table_name);
+                break;
+            case "api_glue_trigger":
+                //insretTrigger(table_name);
+                break;
         }
     }
-    private void solrIndexRunner(String url) throws IOException, SolrServerException {
-        HttpSolrClient client = new HttpSolrClient.Builder("http://localhost:8983/solr/techproducts").build();
-        System.out.println("client"+client);
-        // Solr 8 uses a builder pattern here.
-//        client = new CloudSolrClient.Builder(Collections.singletonList(zkEnsemble), Optional.empty())
-//                .withConnectionTimeout(5000)
-//                .withSocketTimeout(10000)
-//                .build();
 
-
-        // binary parser is used by default for responses
-        client.setParser(new XMLResponseParser());
-
-        // One of the ways Tika can be used to attempt to parse arbitrary files.
-        autoParser = new AutoDetectParser();
-    }
-    // Just a convenient place to wrap things up.
-    private void endIndexing() throws IOException, SolrServerException {
-        if ( docList.size() > 0) { // Are there any documents left over?
-            client.add(docList, 300000); // Commit within 5 minutes
+    public void updateSeperator(String table_name) {
+        switch (table_name) {
+            case "api_glue_job":
+                updateJob(table_name);
+                break;
+            case "api_glue_trigger":
+                //updateTrigger(table_name);
+                break;
         }
-        client.commit(); // Only needs to be done at the end,
-        // commitWithin should do the rest.
-        // Could even be omitted
-        // assuming commitWithin was specified.
-        long endTime = System.currentTimeMillis();
-        log("Total Time Taken: " + (endTime - start) +
-                " milliseconds to index " + totalSql +
-                " SQL rows and " + totalTika + " documents");
     }
-    private static void log(String msg) {
-        System.out.println(msg);
-    }
-    /**
-     * ***************************SQL processing here
-     */
-    private void doSqlDocuments() throws SQLException {
-        Connection con = null;
+
+    private ResultSet getJobResultSet(Connection conn,Statement stmt, ResultSet rs) {
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            log("Driver Loaded......");
-
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/glue?characterEncoding=UTF-8&serverTimezone=UTC&"
-                    + "user=root&password=root");
-
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select id, servername, msg from WLSLOG");
-
-            while (rs.next()) {
-                // DO NOT move this outside the while loop
-                SolrInputDocument doc = new SolrInputDocument();
-                String id = rs.getString("id");
-                String servername = rs.getString("servername");
-                String msg = rs.getString("msg");
-                System.out.println("msg"+msg);
-                doc.addField("id", id);
-                doc.addField("servername", servername);
-                doc.addField("msg", msg);
-
-                docList.add(doc);
-                ++totalSql;
-
-                // Completely arbitrary, just batch up more than one
-                // document for throughput!
-                if ( docList.size() > 1000) {
-                    // Commit within 5 minutes.
-                    UpdateResponse resp = client.add(docList, 300000);
-                    if (resp.getStatus() != 0) {
-                        log("Some horrible error has occurred, status is: " +
-                                resp.getStatus());
-                    }
-                    docList.clear();
-                }
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            if (con != null) {
-                con.close();
-            }
+            String query="select job_id,job_name,script_location from api_glue_job";
+            conn = getConnection();
+            log.info("conn"+conn);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+        } catch (SQLException e) {
+            log.error(e.toString());
         }
+
+        return rs;
     }
-    private void doTikaDocuments(File root) throws IOException, SolrServerException {
 
-        // Simple loop for recursively indexing all the files
-        // in the root directory passed in.
-        for (File file : root.listFiles()) {
-            if (file.isDirectory()) {
-                doTikaDocuments(file);
-                continue;
-            }
-            // Get ready to parse the file.
-            ContentHandler textHandler = new BodyContentHandler();
-            Metadata metadata = new Metadata();
-            ParseContext context = new ParseContext();
-            // Tim Allison noted the following, thanks Tim!
-            // If you want Tika to parse embedded files (attachments within your .doc or any other embedded
-            // files), you need to send in the autodetectparser in the parsecontext:
-            // context.set(Parser.class, autoParser);
-
-            InputStream input = new FileInputStream(file);
-
-            // Try parsing the file. Note we haven't checked at all to
-            // see whether this file is a good candidate.
-            try {
-                autoParser.parse(input, textHandler, metadata, context);
-            } catch (Exception e) {
-                // Needs better logging of what went wrong in order to
-                // track down "bad" documents.
-                log(String.format("File %s failed", file.getCanonicalPath()));
-                e.printStackTrace();
-                continue;
-            }
-            // Just to show how much meta-data and what form it's in.
-            dumpMetadata(file.getCanonicalPath(), metadata);
-
-            // Index just a couple of the meta-data fields.
+    public void insertJobDocuments(ResultSet rs, String table_name) throws SQLException, IOException, SolrServerException {
+//        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+table_name).build();
+        // Using a ZK Host String
+//        String zkHostString = "zkServerA:2181,zkServerB:2181,zkServerC:2181/solr";
+//        SolrClient solr = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
+        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"kang").build();
+        System.out.println("client"+client);
+        client.deleteByQuery( "*:*" );
+        while (rs.next()) {
+            //doc 생성은 loop 안애 있어야 함.
             SolrInputDocument doc = new SolrInputDocument();
-
-            doc.addField("id", file.getCanonicalPath());
-
-            // Crude way to get known meta-data fields.
-            // Also possible to write a simple loop to examine all the
-            // metadata returned and selectively index it and/or
-            // just get a list of them.
-            // One can also use the Lucidworks field mapping to
-            // accomplish much the same thing.
-            String author = metadata.get("Author");
-
-            if (author != null) {
-                doc.addField("author", author);
-            }
-
-            doc.addField("text", textHandler.toString());
+            String job_id = rs.getString("job_id");
+            String job_name = rs.getString("job_name");
+            String script_location = rs.getString("script_location");
+            log.info("job_id"+job_id);
+            log.info("job_name"+job_name);
+            doc.addField("job_id", job_id);
+            doc.addField("job_name", job_name);
+            doc.addField("script_location", script_location);
 
             docList.add(doc);
-            ++totalTika;
-
-            // Completely arbitrary, just batch up more than one document
-            // for throughput!
-            if ( docList.size() >= 1000) {
+            if ( docList.size() > 0) {
                 // Commit within 5 minutes.
-                UpdateResponse resp = client.add(docList, 300000);
+                UpdateResponse resp=client.add(docList, 300000);
+
                 if (resp.getStatus() != 0) {
-                    log("Some horrible error has occurred, status is: " +
-                            resp.getStatus());
+                    log.error("Some horrible error has occurred, status is: " + resp.getStatus());
                 }
+                client.commit();
                 docList.clear();
             }
         }
     }
-    // Just to show all the metadata that's available.
-    private void dumpMetadata(String fileName, Metadata metadata) {
-        log("Dumping metadata for file: " + fileName);
-        for (String name : metadata.names()) {
-            log(name + ":" + metadata.get(name));
+
+    public void updateJobDocuments(ResultSet rs, String table_name) throws SQLException, IOException, SolrServerException {
+//        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+table_name).build();
+        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"kang").build();
+        System.out.println("client"+client);
+
+        UpdateRequest updateRequest = new UpdateRequest();
+        updateRequest.setAction( UpdateRequest.ACTION.COMMIT, false, false);
+        while (rs.next()) {
+            //doc 생성은 loop 안애 있어야 함.
+            SolrInputDocument doc = new SolrInputDocument();
+            String job_id = rs.getString("job_id");
+            String job_name = rs.getString("job_name");
+            String script_location = rs.getString("script_location");
+
+            doc.addField("job_id", job_id);
+            HashMap<String, Object> value = new HashMap <String, Object> ();
+            value.put("set", "PY_PY_PRINT");
+            doc.addField("job_name",value);
+//            value.put("set", script_location);
+//            doc.addField("script_location",value);
+            updateRequest.add(doc);
         }
-        log("nn");
+
+
+
+
+        UpdateResponse response = updateRequest.process(client);
+        System.out.println("Documents Updated");
+        if (response.getStatus() != 0) {
+            log.error("Some horrible error has occurred, status is: " + response.getStatus());
+        }
+        client.commit();
+        docList.clear();
     }
+
+    private void insertJob(String table_name){
+
+        Connection conn =null;
+        Statement stmt=null;
+        ResultSet rs=null;
+
+        try {
+
+            rs = getJobResultSet(conn, stmt, rs);
+            insertJobDocuments(rs, table_name);
+
+        } catch (SQLException e) {
+            log.info(e.toString());
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) try{conn.close();}catch (Exception e){log.error(e.toString());}
+            if (stmt != null) try{stmt.close();}catch (Exception e){log.error(e.toString());}
+            if (rs != null) try{rs.close();}catch (Exception e){log.error(e.toString());}
+        }
+    }
+
+
+
+    private void updateJob(String table_name){
+        Connection conn =null;
+        Statement stmt=null;
+        ResultSet rs=null;
+
+        try {
+
+            rs = getJobResultSet(conn, stmt, rs);
+            updateJobDocuments(rs,table_name);
+
+        } catch (SQLException e) {
+//            log.info(e.toString());
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (conn != null) try{conn.close();}catch (Exception e){log.error(e.toString());}
+            if (stmt != null) try{stmt.close();}catch (Exception e){log.error(e.toString());}
+            if (rs != null) try{rs.close();}catch (Exception e){log.error(e.toString());}
+        }
+    }
+
+
 }
 
