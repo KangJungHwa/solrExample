@@ -125,17 +125,20 @@ public class SolrIndexRunner implements ApplicationRunner {
         // Using a ZK Host String
 //        String zkHostString = "zkServerA:2181,zkServerB:2181,zkServerC:2181/solr";
 //        SolrClient solr = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
-        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"kang").build();
+        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"job").build();
         System.out.println("client"+client);
-        client.deleteByQuery( "*:*" );
+
+        //client.deleteByQuery( "*:*" );
         while (rs.next()) {
             //doc 생성은 loop 안애 있어야 함.
             SolrInputDocument doc = new SolrInputDocument();
+
             String job_id = rs.getString("job_id");
             String job_name = rs.getString("job_name");
             String script_location = rs.getString("script_location");
             log.info("job_id"+job_id);
             log.info("job_name"+job_name);
+
             doc.addField("job_id", job_id);
             doc.addField("job_name", job_name);
             doc.addField("script_location", script_location);
@@ -156,7 +159,7 @@ public class SolrIndexRunner implements ApplicationRunner {
 
     public void updateJobDocuments(ResultSet rs, String table_name) throws SQLException, IOException, SolrServerException {
 //        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+table_name).build();
-        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"kang").build();
+        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"job").build();
         System.out.println("client"+client);
 
         UpdateRequest updateRequest = new UpdateRequest();
