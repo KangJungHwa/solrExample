@@ -7,7 +7,7 @@ server:
 ###################
 data:
   solr:
-    host: http://localhost:8984/solr
+    host: http://localhost:8983/solr
 
 
 datasource:

@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -64,53 +63,27 @@ public class SolrIndexRunner implements ApplicationRunner {
         System.out.println("ApplicationRunner - ApplicationArguments ");
         System.out.println("NonOption Arguments : " + args.getNonOptionArgs());
         System.out.println("Option Arguments Names : " + args.getOptionNames());
-        System.out.println("key1의 value : " + args.getOptionValues("action"));
-        System.out.println("key2의 value : " + args.getOptionValues("table_name"));
+        System.out.println("key1의 value : " + args.getOptionValues("table_name"));
         System.out.println("======================================================");
 
-        switch (args.getOptionValues("action").get(0)) {
-            case "insert":
-                insertSeperator(args.getOptionValues("table_name").get(0));
-                break;
-            case "update":
-                updateSeperator(args.getOptionValues("table_name").get(0));
-                break;
-            default:
-                // System.out.println("기타"); break;
-        }
-
+        String table_name=args.getOptionValues("table_name").get(0);
+        genSolrIndex(table_name);
     }
 
 
 
-    public void insertSeperator(String table_name) {
-        log.info("~~~~~~~~~insertSeperator~~~~~~~~~~~~~~~"+table_name);
-        switch (table_name) {
-            case "api_glue_job":
-                insertJob(table_name);
-                break;
-            case "api_glue_trigger":
-                //insretTrigger(table_name);
-                break;
-        }
-    }
 
-    public void updateSeperator(String table_name) {
-        switch (table_name) {
-            case "api_glue_job":
-                updateJob(table_name);
-                break;
-            case "api_glue_trigger":
-                //updateTrigger(table_name);
-                break;
-        }
-    }
 
-    private ResultSet getJobResultSet(Connection conn,Statement stmt, ResultSet rs) {
+    private ResultSet getJobResultSet(Connection conn,Statement stmt, ResultSet rs,String table_name) {
         try {
-            String query="select job_id,job_name,script_location from api_glue_job";
+            String query = null;
+            if (table_name.equals("cat_tab_mas")){
+                query = "select table_id,table_nm,table_desc, table_tag from cat_tab_mas";
+            }else{
+                query = "select word_id, synonym from cat_std_word";
+            }
             conn = getConnection();
-            log.info("conn"+conn);
+
             stmt = conn.createStatement();
             rs = stmt.executeQuery(query);
         } catch (SQLException e) {
@@ -120,28 +93,33 @@ public class SolrIndexRunner implements ApplicationRunner {
         return rs;
     }
 
-    public void insertJobDocuments(ResultSet rs, String table_name) throws SQLException, IOException, SolrServerException {
-//        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+table_name).build();
-        // Using a ZK Host String
-//        String zkHostString = "zkServerA:2181,zkServerB:2181,zkServerC:2181/solr";
-//        SolrClient solr = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
-        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"job").build();
+    public void insertCatTabMasDocuments(ResultSet rs, String table_name) throws SQLException, IOException, SolrServerException {
+
+        /*
+           Using a ZK Host String
+           String zkHostString = "zkServerA:2181,zkServerB:2181,zkServerC:2181/solr";
+           SolrClient solr = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
+        */
+        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+table_name).build();
         System.out.println("client"+client);
 
-        //client.deleteByQuery( "*:*" );
+        client.deleteByQuery( "*:*" );
         while (rs.next()) {
             //doc 생성은 loop 안애 있어야 함.
             SolrInputDocument doc = new SolrInputDocument();
 
-            String job_id = rs.getString("job_id");
-            String job_name = rs.getString("job_name");
-            String script_location = rs.getString("script_location");
-            log.info("job_id"+job_id);
-            log.info("job_name"+job_name);
+            String table_id = rs.getString("table_id");
+            String table_nm = rs.getString("table_nm");
+            String table_desc = rs.getString("table_desc");
+            String table_tag = rs.getString("table_tag");
+            log.info("table_nm"+table_nm);
+            log.info("table_desc"+table_desc);
+            log.info("table_tag"+table_tag);
 
-            doc.addField("job_id", job_id);
-            doc.addField("job_name", job_name);
-            doc.addField("script_location", script_location);
+            doc.addField("table_id", table_id);
+            doc.addField("table_nm", table_nm);
+            doc.addField("table_desc", table_desc);
+            doc.addField("table_tag", table_tag);
 
             docList.add(doc);
             if ( docList.size() > 0) {
@@ -157,42 +135,47 @@ public class SolrIndexRunner implements ApplicationRunner {
         }
     }
 
-    public void updateJobDocuments(ResultSet rs, String table_name) throws SQLException, IOException, SolrServerException {
-//        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+table_name).build();
-        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+"job").build();
+    public void insertStdWordDocuments(ResultSet rs, String table_name) throws SQLException, IOException, SolrServerException {
+
+        /*
+           Using a ZK Host String
+           String zkHostString = "zkServerA:2181,zkServerB:2181,zkServerC:2181/solr";
+           SolrClient solr = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
+        */
+        HttpSolrClient client = new HttpSolrClient.Builder(solrUrl+"/"+table_name).build();
         System.out.println("client"+client);
 
-        UpdateRequest updateRequest = new UpdateRequest();
-        updateRequest.setAction( UpdateRequest.ACTION.COMMIT, false, false);
+        client.deleteByQuery( "*:*" );
         while (rs.next()) {
             //doc 생성은 loop 안애 있어야 함.
             SolrInputDocument doc = new SolrInputDocument();
-            String job_id = rs.getString("job_id");
-            String job_name = rs.getString("job_name");
-            String script_location = rs.getString("script_location");
 
-            doc.addField("job_id", job_id);
-            HashMap<String, Object> value = new HashMap <String, Object> ();
-            value.put("set", "PY_PY_PRINT");
-            doc.addField("job_name",value);
-//            value.put("set", script_location);
-//            doc.addField("script_location",value);
-            updateRequest.add(doc);
+            String word_id = rs.getString("word_id");
+            String synonym = rs.getString("synonym");
+
+            log.info("word_id"+word_id);
+            log.info("synonym"+synonym);
+
+            doc.addField("word_id", word_id);
+            doc.addField("synonym", synonym);
+
+
+            docList.add(doc);
+            if ( docList.size() > 0) {
+                // Commit within 5 minutes.
+                UpdateResponse resp=client.add(docList, 300000);
+
+                if (resp.getStatus() != 0) {
+                    log.error("Some horrible error has occurred, status is: " + resp.getStatus());
+                }
+                client.commit();
+                docList.clear();
+            }
         }
-
-
-
-
-        UpdateResponse response = updateRequest.process(client);
-        System.out.println("Documents Updated");
-        if (response.getStatus() != 0) {
-            log.error("Some horrible error has occurred, status is: " + response.getStatus());
-        }
-        client.commit();
-        docList.clear();
     }
 
-    private void insertJob(String table_name){
+
+    private void genSolrIndex(String table_name){
 
         Connection conn =null;
         Statement stmt=null;
@@ -200,8 +183,12 @@ public class SolrIndexRunner implements ApplicationRunner {
 
         try {
 
-            rs = getJobResultSet(conn, stmt, rs);
-            insertJobDocuments(rs, table_name);
+            rs = getJobResultSet(conn, stmt, rs, table_name);
+            if (table_name.equals("cat_tab_mas")) {
+                insertCatTabMasDocuments(rs, table_name);
+            }else{
+                insertStdWordDocuments(rs, table_name);
+            }
 
         } catch (SQLException e) {
             log.info(e.toString());
@@ -218,28 +205,6 @@ public class SolrIndexRunner implements ApplicationRunner {
 
 
 
-    private void updateJob(String table_name){
-        Connection conn =null;
-        Statement stmt=null;
-        ResultSet rs=null;
-
-        try {
-
-            rs = getJobResultSet(conn, stmt, rs);
-            updateJobDocuments(rs,table_name);
-
-        } catch (SQLException e) {
-//            log.info(e.toString());
-        } catch (SolrServerException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            if (conn != null) try{conn.close();}catch (Exception e){log.error(e.toString());}
-            if (stmt != null) try{stmt.close();}catch (Exception e){log.error(e.toString());}
-            if (rs != null) try{rs.close();}catch (Exception e){log.error(e.toString());}
-        }
-    }
 
 
 }
