@@ -1,0 +1,52 @@
+2021-07-14 19:39:56.161  INFO 23384 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 23384 (C:\DEV\study\solrExample\target\classes started by pacino in C:\DEV\study\solrExample)
+2021-07-14 19:39:56.176  INFO 23384 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
+2021-07-14 19:40:01.550  INFO 23384 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 6.254 seconds (JVM running for 8.171)
+2021-07-14 19:40:02.487  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-07-14 19:40:02.488  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-07-14 19:40:02.743  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-07-14 19:40:02.744  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-07-14 19:40:02.865  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-07-14 19:40:02.866  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-07-14 19:40:03.013  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-07-14 19:40:03.013  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-07-14 19:53:34.098  INFO 27184 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 27184 (C:\DEV\study\solrExample\target\classes started by pacino in C:\DEV\study\solrExample)
+2021-07-14 19:53:34.104  INFO 27184 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
+2021-07-14 19:53:39.872  INFO 27184 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 6.623 seconds (JVM running for 8.608)
+2021-07-14 19:53:40.690  INFO 27184 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-07-14 19:53:40.691  INFO 27184 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-07-14 19:53:40.762  INFO 27184 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-14 19:53:40.768 ERROR 27184 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:807)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:794)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: org.apache.solr.client.solrj.impl.HttpSolrClient$RemoteSolrException: Error from server at http://localhost:8983/solr/cat_std_word: Exception writing document id 31d97291-ceae-4079-9e70-27afb6819090 to the index; possible analysis error: cannot change DocValues type from SORTED_NUMERIC to NUMERIC for field "word_id"
+	at org.apache.solr.client.solrj.impl.HttpSolrClient.executeMethod(HttpSolrClient.java:681)
+	at org.apache.solr.client.solrj.impl.HttpSolrClient.request(HttpSolrClient.java:266)
+	at org.apache.solr.client.solrj.impl.HttpSolrClient.request(HttpSolrClient.java:248)
+	at org.apache.solr.client.solrj.SolrRequest.process(SolrRequest.java:214)
+	at org.apache.solr.client.solrj.SolrClient.add(SolrClient.java:106)
+	at org.apache.solr.client.solrj.SolrClient.add(SolrClient.java:123)
+	at me.kang.solr.SolrIndexRunner.insertStdWordDocuments(SolrIndexRunner.java:166)
+	at me.kang.solr.SolrIndexRunner.genSolrIndex(SolrIndexRunner.java:190)
+	at me.kang.solr.SolrIndexRunner.run(SolrIndexRunner.java:70)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804)
+	... 5 common frames omitted
+
+2021-07-14 19:57:16.830  INFO 8608 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 8608 (C:\DEV\study\solrExample\target\classes started by pacino in C:\DEV\study\solrExample)
+2021-07-14 19:57:16.835  INFO 8608 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
+2021-07-14 19:57:22.371  INFO 8608 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 6.316 seconds (JVM running for 8.281)
+2021-07-14 19:57:23.201  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-07-14 19:57:23.202  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-07-14 19:57:23.422  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-07-14 19:57:23.423  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-07-14 19:57:23.534  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-07-14 19:57:23.534  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-07-14 19:57:23.641  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-07-14 19:57:23.641  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
