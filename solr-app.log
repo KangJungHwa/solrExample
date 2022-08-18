@@ -1,52 +1,742 @@
-2021-07-14 19:39:56.161  INFO 23384 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 23384 (C:\DEV\study\solrExample\target\classes started by pacino in C:\DEV\study\solrExample)
-2021-07-14 19:39:56.176  INFO 23384 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
-2021-07-14 19:40:01.550  INFO 23384 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 6.254 seconds (JVM running for 8.171)
-2021-07-14 19:40:02.487  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
-2021-07-14 19:40:02.488  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
-2021-07-14 19:40:02.743  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
-2021-07-14 19:40:02.744  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
-2021-07-14 19:40:02.865  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
-2021-07-14 19:40:02.866  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
-2021-07-14 19:40:03.013  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
-2021-07-14 19:40:03.013  INFO 23384 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
-2021-07-14 19:53:34.098  INFO 27184 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 27184 (C:\DEV\study\solrExample\target\classes started by pacino in C:\DEV\study\solrExample)
-2021-07-14 19:53:34.104  INFO 27184 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
-2021-07-14 19:53:39.872  INFO 27184 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 6.623 seconds (JVM running for 8.608)
-2021-07-14 19:53:40.690  INFO 27184 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
-2021-07-14 19:53:40.691  INFO 27184 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
-2021-07-14 19:53:40.762  INFO 27184 --- [main] ConditionEvaluationReportLoggingListener : 
+2021-09-30 18:31:08.833  INFO 16008 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 16008 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:31:08.845  INFO 16008 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
+2021-09-30 18:31:12.302  INFO 16008 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.021 seconds (JVM running for 5.157)
+2021-09-30 18:33:12.376  INFO 16728 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 16728 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:33:12.379  INFO 16728 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
+2021-09-30 18:33:15.481  INFO 16728 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 3.577 seconds (JVM running for 4.738)
+2021-09-30 18:33:15.958  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 18:33:15.959  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 18:33:16.159  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 18:33:16.159  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 18:33:16.234  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 18:33:16.234  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 18:33:16.298  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 18:33:16.298  INFO 16728 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 18:39:24.830  INFO 17852 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 17852 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:39:24.838  INFO 17852 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 18:39:28.876  INFO 17852 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.551 seconds (JVM running for 5.743)
+2021-09-30 18:39:29.406  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 18:39:29.407  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 18:39:29.491  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 18:39:29.492  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 18:39:29.549  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 18:39:29.549  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 18:39:29.618  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 18:39:29.618  INFO 17852 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 18:42:41.382  INFO 17088 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 17088 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:42:41.392  INFO 17088 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 18:42:45.460  INFO 17088 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.592 seconds (JVM running for 5.613)
+2021-09-30 18:42:45.919  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 18:42:45.919  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 18:42:46.000  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 18:42:46.000  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 18:42:46.060  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 18:42:46.060  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 18:42:46.117  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 18:42:46.117  INFO 17088 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 18:43:57.343  INFO 6432 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 6432 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:43:57.350  INFO 6432 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 18:44:01.476  INFO 6432 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.6 seconds (JVM running for 5.568)
+2021-09-30 18:44:01.922  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 18:44:01.922  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 18:44:02.007  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 18:44:02.007  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 18:44:02.066  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 18:44:02.066  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 18:44:02.156  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 18:44:02.157  INFO 6432 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 18:45:57.567  INFO 16128 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 1.8.0_291 on DESKTOP-Q5IU4GL with PID 16128 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:45:57.571  INFO 16128 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,dev-env,common-env
+2021-09-30 18:45:58.221 ERROR 16128 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 18:47:37.188  INFO 3308 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 1.8.0_291 on DESKTOP-Q5IU4GL with PID 3308 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:47:37.192  INFO 3308 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common-env
+2021-09-30 18:47:37.776 ERROR 3308 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 18:48:10.294  INFO 18072 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 1.8.0_291 on DESKTOP-Q5IU4GL with PID 18072 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:48:10.298  INFO 18072 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 18:48:10.930 ERROR 18072 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 18:50:37.418  INFO 18360 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 1.8.0_291 on DESKTOP-Q5IU4GL with PID 18360 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:50:37.422  INFO 18360 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 18:50:38.384 ERROR 18360 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 18:51:42.693  INFO 18164 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 1.8.0_291 on DESKTOP-Q5IU4GL with PID 18164 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:51:42.697  INFO 18164 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 18:51:43.299 ERROR 18164 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 18:52:25.031  INFO 12908 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 1.8.0_291 on DESKTOP-Q5IU4GL with PID 12908 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:52:25.035  INFO 12908 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 18:52:25.627 ERROR 12908 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 18:53:06.882  INFO 18148 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 18148 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:53:06.884  INFO 18148 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 18:53:07.500 ERROR 18148 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 18:56:24.973  INFO 8664 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 8664 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 18:56:24.977  INFO 8664 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 18:56:25.617 ERROR 8664 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 19:01:25.602  INFO 5348 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 5348 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:01:25.606  INFO 5348 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 19:01:26.306 ERROR 5348 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 19:02:05.438  INFO 14520 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 14520 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:02:05.441  INFO 14520 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 19:02:06.079 ERROR 14520 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 19:03:22.739  INFO 17928 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 17928 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:03:22.742  INFO 17928 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 19:03:23.386 ERROR 17928 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 23 common frames omitted
+
+2021-09-30 19:03:59.095  INFO 17464 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 17464 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:03:59.103  INFO 17464 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 19:04:02.885  INFO 17464 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.253 seconds (JVM running for 5.263)
+2021-09-30 19:04:03.353  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 19:04:03.354  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 19:04:03.442  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 19:04:03.443  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 19:04:03.497  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 19:04:03.497  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 19:04:03.556  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 19:04:03.556  INFO 17464 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 19:04:59.491  INFO 13920 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 13920 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:04:59.498  INFO 13920 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 19:05:00.312 ERROR 13920 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:348)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:252)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:285)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:99)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:569)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 24 common frames omitted
+
+2021-09-30 19:06:39.587  INFO 12452 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 12452 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:06:39.590  INFO 12452 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 19:06:40.219 ERROR 12452 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: Could not find class [org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration]
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:334)
+	at org.springframework.core.annotation.TypeMappedAnnotation.adapt(TypeMappedAnnotation.java:446)
+	at org.springframework.core.annotation.TypeMappedAnnotation.getValue(TypeMappedAnnotation.java:369)
+	at org.springframework.core.annotation.TypeMappedAnnotation.asMap(TypeMappedAnnotation.java:284)
+	at org.springframework.core.annotation.AbstractMergedAnnotation.asAnnotationAttributes(AbstractMergedAnnotation.java:193)
+	at org.springframework.core.type.AnnotatedTypeMetadata.getAnnotationAttributes(AnnotatedTypeMetadata.java:106)
+	at org.springframework.context.annotation.AnnotationConfigUtils.attributesFor(AnnotationConfigUtils.java:285)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.determineBeanNameFromAnnotation(AnnotationBeanNameGenerator.java:102)
+	at org.springframework.context.annotation.AnnotationBeanNameGenerator.generateBeanName(AnnotationBeanNameGenerator.java:81)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.registerBeanDefinitionForImportedConfigurationClass(ConfigurationClassBeanDefinitionReader.java:169)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:150)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:348)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:252)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:285)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:99)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:569)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:324)
+	... 24 common frames omitted
+
+2021-09-30 19:10:20.512  INFO 18528 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 18528 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:10:20.517  INFO 18528 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev
+2021-09-30 19:10:23.518  INFO 18528 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-09-30 19:10:23.534  INFO 18528 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-30 19:10:23.534  INFO 18528 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-09-30 19:10:23.732  INFO 18528 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-30 19:10:23.733  INFO 18528 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3135 ms
+2021-09-30 19:10:24.167  INFO 18528 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-30 19:10:24.747  INFO 18528 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-30 19:10:24.802  INFO 18528 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-30 19:10:24.818  INFO 18528 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 5.051 seconds (JVM running for 6.113)
+2021-09-30 19:10:25.267  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 19:10:25.267  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 19:10:25.364  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 19:10:25.365  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 19:10:25.420  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 19:10:25.421  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 19:10:25.484  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 19:10:25.484  INFO 18528 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 19:10:59.475 ERROR   --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.yaml.snakeyaml.parser.ParserException: expected '<document start>', but found '<block mapping start>'
+ in 'reader', line 5, column 1:
+    spring:
+    ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:225)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:78)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:507)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:200)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:164)
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:84)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:45)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:34)
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:102)
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:118)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:82)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:119)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:230)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:217)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:88)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:80)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:100)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:86)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
+
+2021-09-30 19:11:33.360  INFO 19604 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 19604 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:11:33.364  INFO 19604 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 19:11:36.074  INFO 19604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-09-30 19:11:36.086  INFO 19604 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-30 19:11:36.086  INFO 19604 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-09-30 19:11:36.271  INFO 19604 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-30 19:11:36.272  INFO 19604 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2842 ms
+2021-09-30 19:11:36.636  INFO 19604 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-30 19:11:37.210  INFO 19604 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-30 19:11:37.263  INFO 19604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-09-30 19:11:37.280  INFO 19604 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.56 seconds (JVM running for 5.599)
+2021-09-30 19:11:37.761  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 19:11:37.761  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 19:11:37.837  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 19:11:37.837  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 19:11:37.897  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 19:11:37.897  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 19:11:37.956  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 19:11:37.956  INFO 19604 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 19:13:54.515  INFO 1384 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 1384 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:13:54.518  INFO 1384 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 19:13:57.244  INFO 1384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-09-30 19:13:57.256  INFO 1384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-30 19:13:57.256  INFO 1384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-09-30 19:13:57.429  INFO 1384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-30 19:13:57.429  INFO 1384 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2852 ms
+2021-09-30 19:13:57.812  INFO 1384 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-30 19:13:58.396  INFO 1384 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-30 19:13:58.453  INFO 1384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-09-30 19:13:58.472  INFO 1384 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.61 seconds (JVM running for 5.705)
+2021-09-30 19:13:58.975  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 19:13:58.975  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 19:13:59.048  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 19:13:59.048  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 19:13:59.099  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 19:13:59.100  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 19:13:59.158  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 19:13:59.158  INFO 1384 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 19:15:55.294  INFO 17552 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 17552 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:15:55.297  INFO 17552 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: dev,common
+2021-09-30 19:15:58.071  INFO 17552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-09-30 19:15:58.085  INFO 17552 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-30 19:15:58.085  INFO 17552 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-09-30 19:15:58.259  INFO 17552 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-30 19:15:58.259  INFO 17552 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2888 ms
+2021-09-30 19:15:58.478  WARN 17552 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'solrIndexRunner': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'ext.path' in value "${ext.path}"
+2021-09-30 19:15:58.482  INFO 17552 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-09-30 19:15:58.508  INFO 17552 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-07-14 19:53:40.768 ERROR 27184 --- [main] o.s.boot.SpringApplication               : Application run failed
+2021-09-30 19:15:58.531 ERROR 17552 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-java.lang.IllegalStateException: Failed to execute ApplicationRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:807)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:794)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'solrIndexRunner': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'ext.path' in value "${ext.path}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
 	at me.kang.solr.SolrIndexingApp.main(SolrIndexingApp.java:12)
-Caused by: org.apache.solr.client.solrj.impl.HttpSolrClient$RemoteSolrException: Error from server at http://localhost:8983/solr/cat_std_word: Exception writing document id 31d97291-ceae-4079-9e70-27afb6819090 to the index; possible analysis error: cannot change DocValues type from SORTED_NUMERIC to NUMERIC for field "word_id"
-	at org.apache.solr.client.solrj.impl.HttpSolrClient.executeMethod(HttpSolrClient.java:681)
-	at org.apache.solr.client.solrj.impl.HttpSolrClient.request(HttpSolrClient.java:266)
-	at org.apache.solr.client.solrj.impl.HttpSolrClient.request(HttpSolrClient.java:248)
-	at org.apache.solr.client.solrj.SolrRequest.process(SolrRequest.java:214)
-	at org.apache.solr.client.solrj.SolrClient.add(SolrClient.java:106)
-	at org.apache.solr.client.solrj.SolrClient.add(SolrClient.java:123)
-	at me.kang.solr.SolrIndexRunner.insertStdWordDocuments(SolrIndexRunner.java:166)
-	at me.kang.solr.SolrIndexRunner.genSolrIndex(SolrIndexRunner.java:190)
-	at me.kang.solr.SolrIndexRunner.run(SolrIndexRunner.java:70)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804)
-	... 5 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'ext.path' in value "${ext.path}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:931)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1308)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 18 common frames omitted
 
-2021-07-14 19:57:16.830  INFO 8608 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp on DESKTOP-Q5IU4GL with PID 8608 (C:\DEV\study\solrExample\target\classes started by pacino in C:\DEV\study\solrExample)
-2021-07-14 19:57:16.835  INFO 8608 --- [main] me.kang.solr.SolrIndexingApp             : No active profile set, falling back to default profiles: default
-2021-07-14 19:57:22.371  INFO 8608 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 6.316 seconds (JVM running for 8.281)
-2021-07-14 19:57:23.201  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
-2021-07-14 19:57:23.202  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
-2021-07-14 19:57:23.422  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
-2021-07-14 19:57:23.423  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
-2021-07-14 19:57:23.534  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
-2021-07-14 19:57:23.534  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
-2021-07-14 19:57:23.641  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
-2021-07-14 19:57:23.641  INFO 8608 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM
+2021-09-30 19:16:37.550  INFO 19084 --- [main] me.kang.solr.SolrIndexingApp             : Starting SolrIndexingApp using Java 11.0.11 on DESKTOP-Q5IU4GL with PID 19084 (C:\DEV\projects\sdc\solrExample\target\classes started by pacino in C:\DEV\projects\sdc\solrExample)
+2021-09-30 19:16:37.554  INFO 19084 --- [main] me.kang.solr.SolrIndexingApp             : The following profiles are active: prod,common
+2021-09-30 19:16:40.283  INFO 19084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2021-09-30 19:16:40.296  INFO 19084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-30 19:16:40.296  INFO 19084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-09-30 19:16:40.472  INFO 19084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-30 19:16:40.472  INFO 19084 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2856 ms
+2021-09-30 19:16:40.853  INFO 19084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-09-30 19:16:41.421  INFO 19084 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-09-30 19:16:41.480  INFO 19084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2021-09-30 19:16:41.504  INFO 19084 --- [main] me.kang.solr.SolrIndexingApp             : Started SolrIndexingApp in 4.591 seconds (JVM running for 5.59)
+2021-09-30 19:16:41.986  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : word_id1
+2021-09-30 19:16:41.986  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : synonymEQPUMENT,EQP
+2021-09-30 19:16:42.060  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : word_id2
+2021-09-30 19:16:42.060  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : synonymREQUEST, REQ
+2021-09-30 19:16:42.108  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : word_id3
+2021-09-30 19:16:42.108  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : synonymINFORMATION, INFO
+2021-09-30 19:16:42.163  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : word_id4
+2021-09-30 19:16:42.163  INFO 19084 --- [main] me.kang.solr.SolrIndexRunner             : synonymSUMMARY, SUM

@@ -41,6 +41,17 @@ public class SolrIndexRunner implements ApplicationRunner {
     @Value("${datasource.password}")
     String passWord;
 
+
+    @Value("${extract.path}")
+    String path;
+
+    @Value("${extractor.user}")
+    String user;
+
+    @Value("${ext.path}")
+    String extpath;
+
+
 // 주키퍼를 사용할때는 아래에 3대의 주키퍼서버를 콤마 구분자로 정의한다.
 //    private final String zkEnsemble = "http://localhost:2181";
 
@@ -59,6 +70,9 @@ public class SolrIndexRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        System.out.println("==========================extpath============================"+extpath);
+        System.out.println("==========================path============================"+path);
+        System.out.println("==========================user============================"+user);
         System.out.println("======================================================");
         System.out.println("ApplicationRunner - ApplicationArguments ");
         System.out.println("NonOption Arguments : " + args.getNonOptionArgs());

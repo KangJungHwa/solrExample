@@ -2,6 +2,39 @@ server:
   port: 8888
   address: 0.0.0.0
 
+spring:
+  profiles:
+    group:
+      "dev":  "dev,common"
+      "prod": "prod,common"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+extract:
+  path: /dataportal/dev1
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+extract:
+  path: /dataportal/prod1
+
+ext:
+  path: /production
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "common"
 ###################
 ## Apache Solr
 ###################
@@ -9,9 +42,11 @@ data:
   solr:
     host: http://localhost:8983/solr
 
-
 datasource:
   url: jdbc:mysql://localhost:3306/glue?characterEncoding=UTF-8&serverTimezone=UTC&
   driver-class-name: com.mysql.cj.jdbc.Driver
   username: root
   password: root
+
+extractor:
+  user: kangjunghwa

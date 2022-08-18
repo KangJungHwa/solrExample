@@ -184,4 +184,3 @@ https://solr.apache.org/guide/8_9/highlighting.html
  </analyzer> 
  </fieldType>
 
-출처: https://forest71.tistory.com/209 [SW 개발이 좋은 사람]
