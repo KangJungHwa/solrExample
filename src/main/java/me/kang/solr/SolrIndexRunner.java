@@ -84,10 +84,6 @@ public class SolrIndexRunner implements ApplicationRunner {
         genSolrIndex(table_name);
     }
 
-
-
-
-
     private ResultSet getJobResultSet(Connection conn,Statement stmt, ResultSet rs,String table_name) {
         try {
             String query = null;
@@ -216,10 +212,6 @@ public class SolrIndexRunner implements ApplicationRunner {
             if (rs != null) try{rs.close();}catch (Exception e){log.error(e.toString());}
         }
     }
-
-
-
-
 
 }
 
